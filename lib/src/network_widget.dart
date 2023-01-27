@@ -18,8 +18,7 @@ class NetworkSafeWidget extends StatefulWidget {
     this.dismissible = false,
     this.custom,
     super.key,
-  }) : assert(alertType == NetworkAlertType.bottomSheet &&
-            onConnectionError == null);
+  });
 
   final Widget child;
   final NetworkAlertType alertType;
