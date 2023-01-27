@@ -98,7 +98,9 @@ class _NetworkSafeWidgetState extends State<NetworkSafeWidget> {
               widget.custom?.call();
             }
           }
-          if (connected && isErrorWidgetVisible) {
+          if (connected &&
+              isErrorWidgetVisible &&
+              widget.showOnConnectionRestoredWidgets) {
             isErrorWidgetVisible = false;
 
             if (widget.alertType == NetworkAlertType.snackbar) {

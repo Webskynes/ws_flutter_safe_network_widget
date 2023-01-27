@@ -16,10 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(
+      home: Scaffold(
           body: Center(
         child: NetworkSafeWidget(
-          child: Text('Webskyne Flutter Network Widget'),
+          showOnConnectionRestoredWidgets: true,
+          child: const Text('Webskyne Flutter Network Widget'),
         ),
       )),
     );
