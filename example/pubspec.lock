@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
+  cherry_toast:
+    dependency: transitive
+    description:
+      name: cherry_toast
+      sha256: cee6e6ce55e314ed8d7746069c0e2ffb36c8133b6171ee721f7086ecbe454a7c
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.9"
   clock:
     dependency: transitive
     description:

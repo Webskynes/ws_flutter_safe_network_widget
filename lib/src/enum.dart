@@ -1,11 +1,7 @@
-// enum ConnectionStatus{
-//   connected,
-//   notConnected
-// }
-
 enum NetworkAlertType {
   snackbar,
-  flushbar,
+  custom,
   toast,
+  alert,
   bottomSheet,
 }
