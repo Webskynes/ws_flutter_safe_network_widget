@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Example",
+            "request": "launch",
+            "type": "dart",
+            "program": "${workspaceFolder}/example/lib/main.dart"
+        },
+        {
+            "name": "ws_flutter_safe_network_widget",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ws_flutter_safe_network_widget (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}
