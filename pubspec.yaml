@@ -8,8 +8,13 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+
   flutter:
     sdk: flutter
+    
+  internet_connection_checker: ^1.0.0+1
+  connectivity_plus: ^3.0.2
+  rxdart: ^0.27.7
 
 dev_dependencies:
   flutter_test:
