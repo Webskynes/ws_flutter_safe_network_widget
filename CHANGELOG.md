@@ -1,3 +1,8 @@
-## 0.0.1
+## 0.1.0
 
-* TODO: Describe initial release.
+* [APP]<BUG> Fix async callback  error
+* [Example] Fix assertion  app error
+* [Example] Fix example app error
+* [APP] add network connenction types
+* [Network] update base network config
+* [APP] update initial config

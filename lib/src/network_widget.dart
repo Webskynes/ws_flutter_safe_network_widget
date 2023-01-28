@@ -69,32 +69,40 @@ class _NetworkSafeWidgetState extends State<NetworkSafeWidget> {
               });
             }
             if (widget.alertType == NetworkAlertType.bottomSheet) {
-              showModalBottomSheet(
-                context: context,
-                isDismissible: widget.dismissible,
-                builder: widget.onConnectionError?.call(context),
-              );
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                showModalBottomSheet(
+                  context: context,
+                  isDismissible: widget.dismissible,
+                  builder: widget.onConnectionError?.call(context),
+                );
+              });
             }
             if (widget.alertType == NetworkAlertType.toast) {
-              CherryToast.error(
-                title: const Text('No internet connection'),
-                toastPosition: widget.toastPosition,
-              ).show(context);
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                CherryToast.error(
+                  title: const Text('No internet connection'),
+                  toastPosition: widget.toastPosition,
+                ).show(context);
+              });
             }
             if (widget.alertType == NetworkAlertType.alert) {
-              showNetDialogBox(
-                title: widget.label ?? 'No Connection',
-                description: widget.description ??
-                    'Please check you internet connection.',
-                dismissible: widget.dismissible,
-                action: const CircularProgressIndicator.adaptive(),
-              );
-              Future.delayed(const Duration(seconds: 1))
-                  .then((value) => Navigator.pop(context));
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                showNetDialogBox(
+                  title: widget.label ?? 'No Connection',
+                  description: widget.description ??
+                      'Please check you internet connection.',
+                  dismissible: widget.dismissible,
+                  action: const CircularProgressIndicator.adaptive(),
+                );
+                Future.delayed(const Duration(seconds: 1))
+                    .then((value) => Navigator.pop(context));
+              });
             }
 
             if (widget.alertType == NetworkAlertType.custom) {
-              widget.custom?.call();
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                widget.custom?.call();
+              });
             }
           }
           if (connected &&
@@ -122,32 +130,40 @@ class _NetworkSafeWidgetState extends State<NetworkSafeWidget> {
             }
 
             if (widget.alertType == NetworkAlertType.toast) {
-              CherryToast.success(
-                title: const Text('Connection Restored!!'),
-                toastPosition: widget.toastPosition,
-              ).show(context);
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                CherryToast.success(
+                  title: const Text('Connection Restored!!'),
+                  toastPosition: widget.toastPosition,
+                ).show(context);
+              });
             }
 
             if (widget.alertType == NetworkAlertType.bottomSheet) {
-              showModalBottomSheet(
-                context: context,
-                isDismissible: widget.dismissible,
-                builder: widget.onConnectionRestored?.call(context),
-              );
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                showModalBottomSheet(
+                  context: context,
+                  isDismissible: widget.dismissible,
+                  builder: widget.onConnectionRestored?.call(context),
+                );
+              });
             }
             if (widget.alertType == NetworkAlertType.alert) {
-              showNetDialogBox(
-                title: widget.label ?? 'Connection',
-                description: widget.description ??
-                    'Internet Connection Restored successfully.',
-                dismissible: widget.dismissible,
-                action: const Icon(Icons.done),
-              );
-              Future.delayed(const Duration(seconds: 1))
-                  .then((value) => Navigator.pop(context));
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                showNetDialogBox(
+                  title: widget.label ?? 'Connection',
+                  description: widget.description ??
+                      'Internet Connection Restored successfully.',
+                  dismissible: widget.dismissible,
+                  action: const Icon(Icons.done),
+                );
+                Future.delayed(const Duration(seconds: 1))
+                    .then((value) => Navigator.pop(context));
+              });
             }
             if (widget.alertType == NetworkAlertType.custom) {
-              widget.custom?.call();
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                widget.custom?.call();
+              });
             }
           }
           return widget.child;
