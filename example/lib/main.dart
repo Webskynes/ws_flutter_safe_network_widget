@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           body: Center(
         child: NetworkSafeWidget(
+          alertType: NetworkAlertType.alert,
           showOnConnectionRestoredWidgets: true,
           child: const Text('Webskyne Flutter Network Widget'),
         ),
